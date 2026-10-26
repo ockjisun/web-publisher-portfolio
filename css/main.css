@@ -23,21 +23,36 @@ header {
     font-size: 16px;
     font-weight: 400;
 }
+/* header end */
 
 .section_1 {
     width: 100%;
+    min-height: 650px;
+    padding: 80px 80px;
     background-color: #EAE5DB;
-    padding: 100px 80px;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+/* 자기소개 영역 */
+.about_intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    flex: 1.2;
+    min-width: 0;
 }
 
+/* 섹션 번호와 가로선 스타일 */
 .section_num {
     display: flex;
     align-items: center;
     gap: 10px;
+
     color: #808080;
     font-size: 18px;
     font-weight: 500;
@@ -46,18 +61,154 @@ header {
 /* 섹션 번호 뒤에 가상 요소 (가로선) 추가 */
 .section_num::after {
     content: ""; /* 가상 요소 생성 */
-    width: 30px; /* 선의 길이 */
+    width: 130px; /* 선의 길이 */
     height: 1px; /* 선의 두께 */
     background-color: #808080;
 }
 
-.section_1 h2 {
+.about_intro h2 {
+    margin: 0;
     font-size: 34px;
     padding-top: 10px;
 }
 
-.section_1 h3 {
+.about_intro h3 {
     font-size: 24px;
-    padding-top: 20px;
+    line-height: 1.8;
     color: #333333;
+
+    margin: 0;
+    padding-top: 25px;
+}
+
+.about_intro p {
+    font-size: 16px;
+    color: #808080;
+    padding-top: 30px;
+}
+
+/* 중앙 자격증 + 교육 영역 */
+.about_info {
+    display: flex;
+    flex-direction: column;  /* 자식 요소를 세로로 배치 */
+    justify-content: center; /* 세로 방향으로 가운데 정렬 */
+    gap: 35px;
+
+    flex: 1;      /* 남은 공간을 비율에 따라 차지 */
+    min-width: 0; /* 내용 때문에 영역이 불필요하게 커지는 것을 방지 */
+    padding: 0;   /* 내부 여백 제거 */
+
+    transform: translate(-100px, 35px); /* 왼쪽으로 100px, 아래로 35px 이동 */
+    position: relative;                 /* 자식 요소의 위치 기준점 설정 */
+}
+
+/* 자격증 영역 */
+.certifications {
+    min-width: 0;  /* 내용에 따라 최소 너비가 늘어나는 것을 방지 */
+}
+
+.certifications_title {
+    display: flex;        /* 제목과 가로선을 가로로 배치 */
+    align-items: center;  /* 세로 방향으로 가운데 정렬 */
+    gap: 10px;
+
+    color: #000000;
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.certifications_title::after {
+    content: "";   /* 가상 요소 생성 */
+    width: 220px;
+    height: 1px;
+    background-color: #333333;
+}
+
+.certifications p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #808080;
+}
+
+/* 교육 영역 */
+.education {
+    min-width: 0;             /* 내용 때문에 영역이 커지는 것을 방지 */
+    display: flex;            /* 플렉스 레이아웃 적용 */
+    flex-direction: column;   /* 자식 요소를 세로로 배치 */
+}
+
+.education_title {
+    display: flex;
+    align-items: center;  /* 세로 방향으로 가운데 정렬 */
+    gap: 10px;
+
+    color: #000000;
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.education_title::after {
+    content: "";
+    width: 270px;
+    height: 1px;
+    background-color: #333333;
+}
+
+/* 교육 항목 배치 */
+.education_item {
+    display: grid;                     /* 그리드 레이아웃 적용 */
+    grid-template-columns: 135px 1fr;  /* 날짜 영역 135px, 나머지는 내용 영역 */
+    column-gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* 마지막 교육 항목의 아래 여백 제거 */
+.education_item:last-child {
+    margin-bottom: 0;
+}
+
+.edu_date {
+    font-size: 16px;
+    color: #808080;
+
+    grid-column: 1;  /* 첫 번째 열에 배치 */
+    grid-row: 1 / 3; /* 첫 번째 행부터 세 번째 행 직전까지 차지 */
+}
+
+.edu_name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+
+    grid-column: 2;  /* 두 번째 열에 배치 */
+    margin: 0;       /* 기본 바깥 여백 제거 */
+}
+
+.edu_desc {
+    font-size: 16px;
+    color: #808080;
+
+    grid-column: 2;   /* 두 번째 열에 배치 */
+    margin: 5px 0 0;  /* 위쪽 바깥 여백 5px, 나머지는 0 */
+}
+
+/* 프로필 사진 영역 */
+.about_photo {
+    flex: 0 0 260px;    /* 너비를 260px로 고정하고 늘어나거나 줄어들지 않게 설정 */
+    width: 260px;
+    height: 340px;
+    transform: translate(-50px, 35px);
+}
+
+.about_photo img {
+    width: 100%;
+    height: 100%;
+    display: block;    /* 이미지 아래 불필요한 여백 제거 */
+
+    object-fit: cover;            /* 이미지 비율을 유지하며 영역을 꽉 채우고 넘치는 부분 자르기 */
+    object-position: center top;  /* 이미지의 위쪽 중앙을 기준으로 표시 */
+    border-radius: 130px;
 }
