@@ -392,5 +392,125 @@ header {
 .section_3 p {
     font-size: 16px;
     color: #808080;
-    padding-top: 25px;
+    padding-top: 15px;
+}
+
+.Portfolio_menu {
+    display: flex;
+    gap: 20px;
+    padding-top: 30px;
+}
+
+.menu_btn {
+    width: 150px;
+    height: 40px;
+    background-color: #EAE5DB;
+    border: 1px solid #afafaf;
+    border-radius: 20px;
+
+    color: #838383;
+    text-align: center;
+    line-height: 2;
+}
+
+.Portfolio_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    padding-top: 50px;
+}
+
+.Portfolio_box {
+    width: 450px;
+    height: 600px;
+}
+
+.Portfolio_img_box {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 클릭 가능한 포트폴리오 이미지 */
+.Portfolio_img_box img {
+    cursor: pointer;
+}
+
+.Portfolio_box h3 {
+    font-size: 26px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.Portfolio_btn {
+    width: 150px;
+    height: 40px;
+    background-color: #d6cec1;
+    color: #333333;
+
+    text-align: center;
+    line-height: 2.3;
+
+    border-radius: 50px;
+    
+    margin-top: 15px;
+}
+
+.Portfolio_link {
+    padding-top: 20px;
+    color: #333333;
+}
+
+/* 링크에 마우스를 올렸을 때 */
+.Portfolio_link:hover {
+    text-decoration: underline;
+}
+
+.Portfolio_box span {
+    display: block;
+    padding-top: 20px;
+    color: #333333;
+}
+
+.Portfolio_modal {
+    display: none;   /* 처음에는 숨김 */
+    position: fixed; /* 화면 고정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 열었을 때 */
+.Portfolio_modal.active {
+    display: flex;
+}
+
+/* 확대 이미지 */
+.Portfolio_modal img {
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.modal_close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+
+    border: none;
+    background: none;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
 }
