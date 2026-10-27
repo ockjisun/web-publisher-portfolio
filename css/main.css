@@ -6,7 +6,7 @@ header {
     justify-content: space-between; /* 로고는 왼쪽, 메뉴는 오른쪽으로 배치 */
     align-items: center; /* 로고와 메뉴를 세로 가운데로 정렬 */
     padding: 30px 80px; /* 위아래 30px, 좌우 80px의 안쪽 여백 */
-    position: fixed;
+    /* position: fixed; */
 }
 
 .logo {
@@ -211,4 +211,186 @@ header {
     object-fit: cover;            /* 이미지 비율을 유지하며 영역을 꽉 채우고 넘치는 부분 자르기 */
     object-position: center top;  /* 이미지의 위쪽 중앙을 기준으로 표시 */
     border-radius: 130px;
+}
+/* section_1 end */
+
+.section_2 {
+    width: 100%;
+    background-color: #F8F6F0;
+    padding: 80px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 좌우 2열 */
+    gap: 60px;                       /* 왼쪽과 오른쪽 사이 간격 */
+    align-items: start;              /* 두 영역의 위쪽을 맞춤 */
+}
+
+.skills_left {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    min-width: 0;
+}
+
+.section_2_num {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #808080;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.section_2_num::after {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: #808080;
+}
+
+.section_2 h2 {
+    font-size: 34px;
+    padding-top: 10px;
+}
+
+.section_2 p {
+    font-size: 16px;
+    color: #808080;
+    padding-top: 25px;
+}
+
+.skills_icons {
+    display: grid;                         /* 아이콘들을 격자 형태로 배치 */
+    grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개씩 배치 */
+    row-gap: 80px;                         /* 세로 간격을 80px로 설정 */
+    column-gap: 5px;                       /* 가로 간격을 5px로 설정 */
+    padding-top: 20px;
+}
+
+.skills_item {
+    width: 100px;
+    height: 100px;
+
+    display: felx;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.img_box {
+    width: 130px;
+    height: 130px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: 1px solid #EAE5DB;
+
+    display: flex;               /* 내부 요소를 유연하게 배치 */
+    justify-content: center;     /* 가로 가운데 정렬 */
+    align-items: center;         /* 세로 가운데 정렬 */
+   
+}
+
+.img_box img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain; /* 이미지 비율을 유지하며 박스 안에 맞춤 */
+}
+
+.skills_item p {
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    transform: translate(15px, -20px);
+}
+
+.skills_graph {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    padding-top: 220px;
+}
+
+.skill_row {
+    display: grid;
+    grid-template-columns: 90px 1fr 40px;
+    align-items: center;
+    gap: 15px;
+}
+
+.skill_name {
+    font-size: 16px;
+}
+
+.skill_bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill_fill {
+    height: 100%;
+    background-color: #222222;
+    border-radius: 10px;
+}
+
+.html {
+    width: 90%;
+}
+
+.javascript {
+    width: 70%;
+}
+
+.jQuery {
+    width: 60%;
+}
+
+.Photoshop {
+    width: 95%;
+}
+
+.Illustrator {
+    width: 95%;
+}
+
+.Figma {
+    width: 90%;
+}
+
+.section_3 {
+    width: 100%;
+    background-color: #EAE5DB;
+    padding: 80px;
+}
+
+.section_3_num {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #808080;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.section_3_num::after {
+    content: "";
+    width: 110px;
+    height: 1px;
+    background-color: #808080;
+}
+
+.section_3 h2 {
+    font-size: 34px;
+    padding-top: 10px;
+}
+
+.section_3 p {
+    font-size: 16px;
+    color: #808080;
+    padding-top: 25px;
 }
