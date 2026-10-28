@@ -10,7 +10,8 @@ header {
     justify-content: space-between; /* 로고는 왼쪽, 메뉴는 오른쪽으로 배치 */
     align-items: center; /* 로고와 메뉴를 세로 가운데로 정렬 */
     padding: 30px 80px; /* 위아래 30px, 좌우 80px의 안쪽 여백 */
-    /* position: fixed; */
+    position: fixed;
+    z-index: 1000;
 }
 
 .logo {
@@ -26,6 +27,7 @@ header {
 .gnb li a {
     font-size: 16px;
     font-weight: 400;
+    text-decoration: none;
 }
 /* header end */
 
@@ -752,3 +754,13 @@ footer p {
     font-size: 14px;
     line-height: 7;
 }
+
+/* GNB 클릭 시 섹션 제목이 헤더에 가려지지 않도록 설정 */
+[id^="section_"] {
+    scroll-margin-top: 80px;
+}
+
+/* []	HTML 요소의 속성을 기준으로 선택
+id	id 속성을 가진 요소를 대상으로 함
+^=	속성값이 특정 글자로 시작하는지 확인
+"section_"	시작하는지 확인할 글자 */
