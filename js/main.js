@@ -82,11 +82,42 @@ $(document).ready(function(){
         }
     });
 
+    // 새로고침하면 페이지 맨 위에서 시작
+    if('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
 
+    window.addEventListener('load', function(){
+        window.scrollTo(0, 0);
+    });
 
+    // GNB 클릭 시 해당 섹션으로 이동
+    $('.gnb a').on('click', function(e) {
+        e.preventDefault();
 
+        const target = $(this).attr('href');
 
-    
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 80
+        }, 500);
+    });
+
+    // 푸터 로고 클릭 시 맨 위로 이동
+    $('.footer_logo').on('click', function(e){
+        e.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+
+        return false; // 기본 링크 동작과 이벤트 전파를 추가로 막음
+    });
+
+    // 헤더 로고 클릭 시 페이지 새로고침
+    $('.logo').on('click', function(){
+        window.location.href = window.location.pathname;
+    });
+
 }); // end
 
 
