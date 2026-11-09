@@ -1,8 +1,40 @@
 $(document).ready(function(){
 
-    // 인포그래픽과 블로그 썸네일 클릭 시 이미지 확대
-    $('.Portfolio_box').eq(1)
-    .add($('.Portfolio_box').eq(2))
+    // 향수 상세페이지 전체 이미지 모달
+    $('.Portfolio_box').eq(1).find('span').on('click', function(){
+
+        // 상세페이지 모달 열기
+        $('.DetailPage_modal').addClass('active');
+
+        // 뒤에 있는 사이트 스크롤 방지
+        $('body').css('overflow', 'hidden');
+    });
+
+    // 상세페이지 모달 닫기 함수
+    function closeDetailPageModal() {
+
+        $('.DetailPage_modal').removeClass('active');
+
+        // 사이트 스크롤 복구
+        $('body').css('overflow', '');
+    }
+
+    // X 버튼 클릭 시 닫기
+    $('.DetailPage_close').on('click', function(){
+
+        closeDetailPageModal();
+    });
+
+    // 모달 바깥쪽 클릭 시 닫기
+    $('.DetailPage_modal').on('click', function(e){
+
+        if($(e.target).hasClass('DetailPage_modal')){
+            closeDetailPageModal()
+        }
+    });
+
+    //블로그 썸네일 클릭 시 이미지 확대
+    $('.Portfolio_box').eq(2)
     .find('.Portfolio_img_box img, span')
     .on('click', function(){
 
@@ -40,12 +72,6 @@ $(document).ready(function(){
         }
     });
 
-    // ESC 키를 누르면 닫기
-    $(document).on('keydown', function(e){
-        if (e.key === 'Escape') {
-            $('.Portfolio_modal').removeClass('active');
-        }
-    });
 
     // 카드뉴스 이미지 또는 안내 글자 클릭 시 모달 열기
     $('.Portfolio_box').eq(3)
@@ -75,10 +101,16 @@ $(document).ready(function(){
         }
     });
 
-    // ESC 키를 누르면 카드뉴스 모달 닫기
-    $(document).on('keydown', function(e) {
-        if(e.key === 'Escape') {
-            closeCardNewsModal();
+      // ESC 키를 누르면 닫기
+    $(document).on('keydown', function(e){
+        if (e.key === 'Escape') {
+
+            $('.Portfolio_modal').removeClass('active');
+            $('.DetailPage_modal').removeClass('active');
+            $('.CardNews_modal').removeClass('active');
+
+            // 사이트 스크롤 복구
+            $('body').css('overflow', '');
         }
     });
 
